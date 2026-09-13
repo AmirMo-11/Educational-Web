@@ -1,0 +1,322 @@
+/* ==================== GENERAL STYLES ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --primary: #4CAF50;
+    --primary-dark: #2E7D32;
+    --dark: #121212;
+    --pure: #fff;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--dark);
+    color: var(--pure);
+}
+
+/* ==================== SECTIONS STYLES ==================== */
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 70px; /* عشان الـ Navbar */
+}
+
+/* 1. الرئيسية - مدرّج وجامعة */
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                      url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=1920&auto=format&fit=crop');
+}
+
+/* 2. من نحن - مكتبة وكتب */
+#about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                      url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1920&auto=format&fit=crop');
+}
+
+/* 3. الأقسام - شاشات وبرمجة ودراسة */
+#sections {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                      url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');
+}
+
+/* 4. تواصل معنا - تكنولوجيا ودعم */
+#contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                      url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1920&auto=format&fit=crop');
+}
+
+/* كروت النصوص في المنتصف تماماً */
+.home-content, .about-content, .sections-content, .contact-content {
+    background: rgba(18, 18, 18, 0.85);
+    padding: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: center;
+    direction: rtl;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.home-content h2, .about-content h2, .sections-content h2, .contact-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.home-content p, .about-content p, .sections-content li, .contact-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.sections-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0a0a0a;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ==================== NAVBAR ==================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    width: 1152px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand svg {
+    height: 40px;
+    width: 40px;
+}
+
+.a87 {
+    color: aquamarine;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    color: var(--pure);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-list li a:hover, .nav-list li.active a {
+    color: var(--primary);
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.btn {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32) !important;
+    color: var(--pure) !important;
+    padding: 8px 22px !important;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px !important;
+}
+/* إخفاء القائمة المنسدلة افتراضياً */
+.dropdown-list {
+    list-style-type: none;
+    background: rgba(25, 25, 25, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-list li {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.dropdown-list li a {
+    color: #e0e0e0 !important;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.dropdown-list li a:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+/* إظهار القائمة المنسدلة عند الوقوف بالماوس فقط */
+.nav-list li:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(5px);
+}
+
+/* القائمة الجانبية للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pure);
+        border-radius: 3px;
+    }
+
+    .nav-list {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(18, 18, 18, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+        transition: right 0.4s ease;
+        padding: 50px 0;
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    .dropdown-list {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.05);
+        display: none;
+    }
+
+    .nav-list li:hover .dropdown-list {
+        display: block;
+        transform: none;
+    }
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 1002; /* عشان يكون فوق كل حاجة ويتداس عليه بسهولة */
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-list {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(18, 18, 18, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+        transition: right 0.4s ease;
+        z-index: 1001;
+        padding: 50px 0;
+    }
+
+    /* ظهور القائمة عند الضغط */
+    .nav-list.active {
+        right: 0 !important;
+    }
+}
